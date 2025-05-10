@@ -73,8 +73,8 @@ tool/
 ## 📊 Model Details
 
 - **Algorithm:** Random Forest Classifier  
-- **Training Data:** Custom URL dataset (`url_dataset.csv`)
-    (Source: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset)
+- **Training Data:** Custom URL dataset (`url_dataset_.csv`)
+    (Source: kaggle)
 - **Classes:** Benign (0), Phishing (1), Defacement (2), Malware (3)  
 - **Class Balancing:** Enabled with `class_weight='balanced'`
 

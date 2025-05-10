@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report
 import joblib
 from extract_features import extract_url_features
 
-df = pd.read_csv("url_dataset_1.csv") # Enter the dataset names from the present files
+df = pd.read_csv("url_dataset.csv") # Enter the dataset name
 
 label_mapping = {
     "benign": 0,

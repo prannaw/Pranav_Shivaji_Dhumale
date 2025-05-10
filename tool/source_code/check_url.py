@@ -8,8 +8,7 @@ label_names = {
     0: "Benign",
     1: "Phishing",
     2: "Defacement",
-    3: "Malware",
-    4: "Malicious"
+    3: "Malware"
 }
 
 def check_url(url):

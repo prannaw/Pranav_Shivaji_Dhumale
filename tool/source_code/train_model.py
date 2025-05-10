@@ -11,8 +11,7 @@ label_mapping = {
     "benign": 0,
     "phishing": 1,
     "defacement": 2,
-    "malware": 3,
-    "malicious": 4
+    "malware": 3
 }
 
 df['type'] = df['type'].map(label_mapping)

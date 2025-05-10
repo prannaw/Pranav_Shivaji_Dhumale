@@ -74,7 +74,7 @@ tool/
 
 - **Algorithm:** Random Forest Classifier  
 - **Training Data:** Custom URL dataset (`url_dataset_.csv`)
-    (Source: kaggle)
+    (Source: Kaggle)
 - **Classes:** Benign (0), Phishing (1), Defacement (2), Malware (3)  
 - **Class Balancing:** Enabled with `class_weight='balanced'`
 

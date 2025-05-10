@@ -1,4 +1,4 @@
-Download url datasets from Kaggle or any other websites.
+Download url datasets from datasets-link.txt or Kaggle or any other websites.
 Make sure that the dataset has only two columns 'url' & 'type'.
 The second column ('type') should only contain any of these four words: 'Benign', 'Phishing', 'Defacement' or 'Malware' for each url.
 Make sure to save the dataset in the "source_code" folder and name the folder as 'url_dataset.csv'.

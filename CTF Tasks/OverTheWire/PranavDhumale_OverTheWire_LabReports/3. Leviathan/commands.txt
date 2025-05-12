@@ -1,0 +1,57 @@
+# Connect to Leviathan server
+ssh leviathan0@leviathan.labs.overthewire.org -p 2223
+
+# Check home directory contents
+ls -l
+
+# Find executable files
+find . -type f -executable
+
+# Explore binary behavior
+./check
+
+# Try supplying input
+(echo "dummy"; cat) | ./check
+
+# Switch to leviathan1
+ssh leviathan1@leviathan.labs.overthewire.org -p 2223
+
+# List all files including hidden ones
+ls -la
+
+# Search for readable password files
+cat /etc/leviathan_pass/leviathan2
+
+# Connect to leviathan2
+ssh leviathan2@leviathan.labs.overthewire.org -p 2223
+
+# Find SUID programs
+find / -user leviathan2 -perm -4000 2>/dev/null
+
+# Analyze binaries
+strings ./printfile
+
+# Exploit file argument to reveal password
+./printfile /etc/leviathan_pass/leviathan3
+
+# Connect to leviathan3
+ssh leviathan3@leviathan.labs.overthewire.org -p 2223
+
+# Check binary hints
+strings ./level3
+
+# Try filename manipulation
+./level3 "$(cat /etc/leviathan_pass/leviathan4)"
+
+# Move to leviathan4
+ssh leviathan4@leviathan.labs.overthewire.org -p 2223
+
+# Investigate more binaries
+strings ./binary4
+
+# Extract passwords using grep
+strings ./binary4 | grep pass
+
+# Use found passwords to login to next users
+
+..Repeated steps for other levels: Continue similar file inspection and basic binary analysis

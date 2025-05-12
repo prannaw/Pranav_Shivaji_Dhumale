@@ -1,0 +1,52 @@
+# Connect to Krypton server
+ssh krypton0@krypton.labs.overthewire.org -p 2231
+
+# Read welcome message
+cat README
+
+# Check files in directory
+ls -la
+
+# View password for krypton1
+cat krypton1/krypton2
+
+# Move to Krypton1
+ssh krypton1@krypton.labs.overthewire.org -p 2231
+
+# Explore directory
+ls -l
+
+# Find encoded password
+cat krypton2/krypton3
+
+# Decode using ROT13
+echo "....." | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+# Move to Krypton2
+ssh krypton2@krypton.labs.overthewire.org -p 2231
+
+# Explore current directory
+ls -la
+
+# Check encrypted password file
+cat krypton3/krypton4
+
+# Decode simple cipher manually or script
+python3 decode_substitution.py
+
+# Move to Krypton3
+ssh krypton3@krypton.labs.overthewire.org -p 2231
+
+# Check for README clues
+cat README
+
+# Analyze any binary files
+strings krypton4 | less
+
+# Run binaries carefully
+./krypton4
+
+# Proceed with next ssh login when password found
+ssh krypton4@krypton.labs.overthewire.org -p 2231
+
+..Repeated steps for other levels: Explore, analyze ciphers, decode passwords

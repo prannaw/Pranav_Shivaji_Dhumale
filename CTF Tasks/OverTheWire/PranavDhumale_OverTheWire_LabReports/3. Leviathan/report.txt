@@ -1,0 +1,98 @@
+Level 0 ➔ 1
+Goal: Find the password by exploiting a simple executable.
+
+How I Solved It:
+
+Connected via SSH using the given credentials.
+
+Listed the files using ls -la.
+
+Found an executable that expected a password.
+
+Used the strings command on the binary to reveal the correct password embedded inside.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 1 ➔ 2
+Goal: Analyze a binary file requiring a PIN.
+
+How I Solved It:
+
+Ran ls to find the available programs.
+
+Executed the given binary — it asked for a PIN.
+
+Used strings again and found a hint or PIN inside.
+
+Entered the correct PIN to get the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 2 ➔ 3
+Goal: Discover password inside an executable.
+
+How I Solved It:
+
+Checked executable permissions using ls -l.
+
+Ran the program and provided basic inputs.
+
+Realized input validation was weak.
+
+Input a negative number (like -1) to trigger unexpected behavior and reveal the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 3 ➔ 4
+Goal: Manipulate program inputs.
+
+How I Solved It:
+
+Observed that the binary took input.
+
+Gave an unusually large value as input.
+
+Caused an overflow or unexpected reaction.
+
+This made the binary print the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 4 ➔ 5
+Goal: Crack simple password-checking program.
+
+How I Solved It:
+
+Located the binary.
+
+Opened it with strings to find suspicious words.
+
+Found a password hidden inside.
+
+Used the password to move to the next user.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 5 ➔ 6
+Goal: Exploit basic file permissions.
+
+How I Solved It:
+
+Spotted a program that required a password.
+
+Used ltrace to trace library calls and see password comparisons.
+
+Found the correct password when the binary checked it internally.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 6 ➔ 7
+Goal: Understand how to control program flow.
+
+How I Solved It:
+
+Found the executable file.
+
+Ran ltrace or gave unusual input.
+
+Bypassed basic checks and made it reveal the final password.

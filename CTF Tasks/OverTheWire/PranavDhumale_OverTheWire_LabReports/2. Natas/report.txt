@@ -1,0 +1,324 @@
+Natas 0 ➔ 1
+Challenge: Find the hidden password in the web page.
+
+Solution:
+Visited the provided website. The page displayed a basic message.
+Opened Developer Tools (Ctrl+U) to inspect the page's source code.
+Found a comment containing the password.
+Used that password to login to the next level.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 1 ➔ 2
+Challenge: Password again hidden but less obvious.
+
+Solution:
+Inspected the page carefully.
+The password was hidden inside the HTML body itself, among div elements.
+Found and copied the password to proceed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 2 ➔ 3
+Challenge: Explore server directories.
+
+Solution:
+Opened page source, noticed a link pointing to /files/.
+Navigated to /files/ manually.
+Found a text file containing the password among other listed files.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 3 ➔ 4
+Challenge: Find password in HTTP headers.
+
+Solution:
+After opening the page, noticed no password on the page itself.
+Opened the browser Network tab and refreshed.
+Found a custom HTTP response header where the password was embedded.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 4 ➔ 5
+Challenge: Redirect trick.
+
+Solution:
+The page tried redirecting automatically to an "incorrect" page.
+Before the redirection happened, modified the URL manually.
+Forced access to the correct page and found the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 5 ➔ 6
+Challenge: Exploit cookies to login.
+
+Solution:
+Checked the browser cookies.
+Found a cookie named loggedin set to 0.
+Manually edited it to 1, refreshed the page, and the password was displayed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 6 ➔ 7
+Challenge: Locate hidden password via directories.
+
+Solution:
+Page hinted at an /includes/ directory.
+Manually browsed the /includes/ folder.
+Found a secret file containing the password hidden there.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 7 ➔ 8
+Challenge: URL parameter manipulation.
+
+Solution:
+The page used a page parameter.
+Changed its value manually in the URL to access a hidden page.
+Retrieved the password successfully.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 8 ➔ 9
+Challenge: Reverse simple encryption.
+
+Solution:
+The server applied a predictable transformation to input strings.
+Carefully analyzed the logic and reversed the process.
+Entered the correct input to get the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 9 ➔ 10
+Challenge: Command Injection via input.
+
+Solution:
+Input fields were vulnerable to shell command injection.
+Injected ; cat /etc/natas_webpass/natas10 in the input field.
+The password was printed back on the page.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 10 ➔ 11
+Challenge: Evade weak input filters.
+
+Solution:
+The server tried to block dangerous inputs.
+By using encoded characters and clever payloads, managed to bypass filters.
+Extracted the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 11 ➔ 12
+Challenge: Modify encrypted cookies.
+
+Solution:
+Decoded the cookie from base64 and understood the JSON structure inside.
+Changed the admin field to true, re-encoded and re-encrypted it, and sent it back.
+Got access to the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 12 ➔ 13
+Challenge: File upload bypass.
+
+Solution:
+Server restricted file uploads to only images.
+Uploaded a .jpg file containing embedded PHP code.
+Accessed the uploaded file to execute my code and reveal the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 13 ➔ 14
+Challenge: Bypass stricter file type checking.
+
+Solution:
+Renamed a PHP file to have double extensions like file.php.jpg.
+Uploaded it successfully and executed it to leak the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 14 ➔ 15
+Challenge: SQL Injection.
+
+Solution:
+Login form vulnerable to SQL injection.
+Submitted ' OR 1=1 -- to login without credentials.
+Password for next level was displayed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 15 ➔ 16
+Challenge: Blind SQL Injection.
+
+Solution:
+No direct error messages were shown.
+Used a character-by-character guessing method through crafted SQL queries.
+Slowly extracted the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 16 ➔ 17
+Challenge: Shell command injection.
+
+Solution:
+Input was passed to a shell command unsafely.
+Injected a shell command to read the password file directly.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 17 ➔ 18
+Challenge: Blind shell command injection.
+
+Solution:
+Could not see output directly.
+Used timing-based attacks (sleep) to infer correct guesses.
+Reconstructed the password piece by piece.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 18 ➔ 19
+Challenge: Break session IDs.
+
+Solution:
+Noticed that the session IDs were simple and incremental.
+Guessed and modified session IDs until I logged in as admin and got the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 19 ➔ 20
+Challenge: Understand base64 session encoding.
+
+Solution:
+Decoded session ID using base64.
+Edited the decoded content to change my username to admin, then re-encoded it.
+Password was displayed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 20 ➔ 21
+Challenge: Exploit race condition.
+
+Solution:
+Server allowed multiple operations simultaneously.
+Raced two requests at the same time to confuse the server logic and access the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 21 ➔ 22
+Challenge: Capture server redirection.
+
+Solution:
+A page redirected too fast.
+Used browser network tools or curl to intercept the server response before the redirect happened.
+Password found in the early response.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 22 ➔ 23
+Challenge: Trick server with weird input.
+
+Solution:
+Sent unexpected values to parameters (like blank or special characters).
+Caused the server to leak the password unintentionally.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 23 ➔ 24
+Challenge: PHP type juggling.
+
+Solution:
+PHP considered 0 == "string" due to weak typing.
+Crafted an input that triggered type confusion and bypassed the password check.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 24 ➔ 25
+Challenge: Path traversal attack.
+
+Solution:
+Uploaded a file using directory traversal (../) to escape restricted folders.
+Placed my PHP code in a public directory to reveal the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 25 ➔ 26
+Challenge: Upload outside intended location.
+
+Solution:
+Tricked the server into writing files in unexpected directories using crafted filenames.
+Accessed my payload to get the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 26 ➔ 27
+Challenge: Poison server sessions.
+
+Solution:
+Created my own session file with malicious data.
+Made the server execute it by forcing a session load.
+Password recovered.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 27 ➔ 28
+Challenge: PHP object injection.
+
+Solution:
+Built a fake serialized PHP object to trick the server into giving access.
+Successfully unserialized the object and found the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 28 ➔ 29
+Challenge: Break weak cryptography.
+
+Solution:
+Found that server used XOR encryption.
+Analyzed patterns and reconstructed the original secret to reveal the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 29 ➔ 30
+Challenge: CBC encryption bit flipping.
+
+Solution:
+Manipulated specific bits in the encrypted data block to alter its meaning after decryption.
+Changed user roles to gain admin access.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 30 ➔ 31
+Challenge: Filter bypass with special characters.
+
+Solution:
+Filtered out dangerous characters but missed some escape sequences.
+Built complex payloads using overlooked characters to inject commands and get the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 31 ➔ 32
+Challenge: Remote file inclusion.
+
+Solution:
+Set up my own PHP server remotely.
+Pointed the vulnerable server to my URL, causing it to execute my code remotely and leak the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 32 ➔ 33
+Challenge: Final hidden vulnerability.
+
+Solution:
+Analyzed server behavior carefully.
+Found that despite better security, a small oversight existed.
+Exploited it to find the very last password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Natas 33 ➔ 34
+Challenge: Final retrieval.
+
+Solution:
+After solving all vulnerabilities, the server revealed a congratulatory message.
+The final password was displayed, marking the completion of the Natas series.

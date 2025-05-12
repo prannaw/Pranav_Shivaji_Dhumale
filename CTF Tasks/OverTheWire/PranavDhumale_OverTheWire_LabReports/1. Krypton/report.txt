@@ -1,0 +1,120 @@
+Level 0 ➔ 1
+Objective: Find the password encoded in a file.
+
+Method Used: SSH access, cat, ROT13 decoding.
+
+Procedure:
+
+Logged into the server via SSH.
+
+Used cat to read the README and the krypton1 file.
+
+Detected that ROT13 cipher was used.
+
+Applied ROT13 transformation using tr command:
+cat krypton1 | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+Retrieved the password for the next stage.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 1 ➔ 2
+Objective: Decrypt a ROT13 protected string.
+
+Method Used: cat, tr
+
+Procedure:
+
+Accessed Level 1 using SSH.
+
+Found an encoded file named krypton2.
+
+Decrypted it using:
+cat krypton2 | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+The decoded text contained the password for Level 2.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 2 ➔ 3
+Objective: Break a simple substitution cipher.
+
+Method Used: Manual analysis, frequency observation.
+
+Procedure:
+
+Connected to Level 2 via SSH.
+
+Observed the encrypted message.
+
+Analyzed common letter patterns and high-frequency characters.
+
+Mapped cipher letters to English equivalents gradually.
+
+Extracted the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 3 ➔ 4
+Objective: Solve a substitution cipher manually.
+
+Method Used: Letter guessing, online decoding tools.
+
+Procedure:
+
+Entered Level 3 and opened the ciphertext.
+
+Noticed common English word structures (like "the", "and").
+
+Substituted letters accordingly and solved it step-by-step.
+
+Revealed the password to move forward.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 4 ➔ 5
+Objective: Write a decryption tool for random substitution.
+
+Method Used: Python script.
+
+Procedure:
+
+Connected to Level 4.
+
+Found that a random substitution key was provided.
+
+Created a small script to map the ciphered text to real letters.
+
+Successfully decrypted and obtained the password.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 5 ➔ 6
+Objective: Reverse an encrypted text using key data.
+
+Method Used: Manual mapping/Python scripting.
+
+Procedure:
+
+Accessed Level 5.
+
+Examined the scrambled alphabet key.
+
+Mapped the encrypted letters back to original alphabet manually or via a script.
+
+Password was revealed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Level 6 ➔ 7
+Objective: Solve final cipher challenge based on permutation.
+
+Method Used: Decryption by pattern analysis.
+
+Procedure:
+
+Logged into Level 6.
+
+Used the permutation data to reconstruct the original text.
+
+Completed decryption to retrieve the last password.
